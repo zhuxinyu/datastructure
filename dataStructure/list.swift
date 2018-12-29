@@ -21,13 +21,14 @@ class list: UIViewController, UITableViewDelegate, UITableViewDataSource {
     lazy var sort:[String] = ["冒泡排序", "插入排序", "选择排序", "希尔排序", "归并排序", "快速排序", "桶排序", "计数排序", "基数排序"]
     
     lazy var dataSource:[String] = { [unowned self] in
-        switch type(rawValue:"chain")! {
+        switch type(rawValue:typeStr)! {
         case .chain: return chain
         case .stack: return stack
         case .recursion: return recursion
         case .sort: return sort
         }
     }()
+    lazy var typeStr: String = self.title!
     
     @IBOutlet weak var listView: UITableView!
     
@@ -38,7 +39,8 @@ class list: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath)
-        cell.textLabel?.text = dataSource[indexPath.count]
+        cell.textLabel?.text = dataSource[indexPath.row]
+        cell.textLabel?.textColor = .white
         return cell
     }
     

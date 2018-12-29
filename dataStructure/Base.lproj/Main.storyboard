@@ -29,7 +29,7 @@
                                     <color key="titleColor" red="0.70980392156862748" green="0.89803921568627454" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yks-PI-qfg" kind="show" identifier="链表" id="zG4-pe-M4I"/>
+                                    <segue destination="yks-PI-qfg" kind="show" identifier="chain" id="zG4-pe-M4I"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1I-Pf-u92">
@@ -40,7 +40,7 @@
                                     <color key="titleColor" red="0.70980392160000005" green="0.8980392157" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yks-PI-qfg" kind="show" identifier="栈、队列" id="hjR-lR-YHg"/>
+                                    <segue destination="yks-PI-qfg" kind="show" identifier="stack" id="hjR-lR-YHg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHa-Em-nyq">
@@ -51,7 +51,7 @@
                                     <color key="titleColor" red="0.70980392160000005" green="0.8980392157" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yks-PI-qfg" kind="show" identifier="排序" id="ORb-GN-2eA"/>
+                                    <segue destination="yks-PI-qfg" kind="show" identifier="sort" id="ORb-GN-2eA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsm-0A-uhz">
@@ -62,7 +62,7 @@
                                     <color key="titleColor" red="0.70980392160000005" green="0.8980392157" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yks-PI-qfg" kind="show" identifier="递归" id="AgE-JL-Ofq"/>
+                                    <segue destination="yks-PI-qfg" kind="show" identifier="recursion" id="AgE-JL-Ofq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -98,7 +98,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ao8-CG-s6F" id="2Bg-ls-hgp">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" red="0.70980392160000005" green="0.8980392157" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -147,6 +149,6 @@
         <image name="bg" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zG4-pe-M4I"/>
+        <segue reference="AgE-JL-Ofq"/>
     </inferredMetricsTieBreakers>
 </document>
