@@ -17,6 +17,7 @@
 		1EA095DD21D70E5D0011D544 /* dataStructureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA095DC21D70E5D0011D544 /* dataStructureUITests.swift */; };
 		1EA095EF21D7113A0011D544 /* list.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA095EE21D7113A0011D544 /* list.swift */; };
 		1EA095F421D714810011D544 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA095F321D714810011D544 /* extensions.swift */; };
+		1EA095F621D761E30011D544 /* detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA095F521D761E30011D544 /* detail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		1EA095DE21D70E5E0011D544 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1EA095EE21D7113A0011D544 /* list.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = list.swift; sourceTree = "<group>"; };
 		1EA095F321D714810011D544 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		1EA095F521D761E30011D544 /* detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				1EA095B921D70E5C0011D544 /* AppDelegate.swift */,
 				1EA095BB21D70E5C0011D544 /* ViewController.swift */,
 				1EA095EE21D7113A0011D544 /* list.swift */,
+				1EA095F521D761E30011D544 /* detail.swift */,
 				1EA095BD21D70E5C0011D544 /* Main.storyboard */,
 				1EA095C321D70E5D0011D544 /* Assets.xcassets */,
 				1EA095C521D70E5D0011D544 /* LaunchScreen.storyboard */,
@@ -305,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EA095F621D761E30011D544 /* detail.swift in Sources */,
 				1EA095F421D714810011D544 /* extensions.swift in Sources */,
 				1EA095BC21D70E5C0011D544 /* ViewController.swift in Sources */,
 				1EA095EF21D7113A0011D544 /* list.swift in Sources */,

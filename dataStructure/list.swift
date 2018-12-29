@@ -47,4 +47,11 @@ class list: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.count
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let controller = segue.destination as! detail
+        if let cell = sender as? UITableViewCell, let indexPath = listView.indexPath(for: cell) {
+            controller.title = dataSource[indexPath.row]
+        }
+    }
 }
