@@ -12,6 +12,11 @@ import UIKit
 class detail: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("detail")
+        let list = LinkedList(nodeValue: 4)
+        list.addNode(withValue: 3)
+        list.addNode(withValue: 5)
+        list.addNode(withValue: 6)
+        let results = list.traverse()
+        print(results)
     }
 }
