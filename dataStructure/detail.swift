@@ -16,7 +16,12 @@ class detail: UIViewController {
         list.addNode(withValue: 3)
         list.addNode(withValue: 5)
         list.addNode(withValue: 6)
-        let results = list.traverse()
-        print(results)
+        
+        var results = list.traverse()
+        print("创建单链表: \(results)")
+        
+        list.removeNode(withValue: 5)
+        results = list.traverse()
+        print("删除值为5的节点: \(results)")
     }
 }

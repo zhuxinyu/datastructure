@@ -38,8 +38,23 @@ class LinkedList {
         current.next = node
     }
     
+    func removeNode(node: Node) {
+        var current: Node = self.head
+        while current.next != nil {
+            if current.next?.value == node.value {
+                current.next = current.next?.next
+            } else {
+                current = current.next!
+            }
+        }
+    }
+    
     func addNode(withValue value:Int) {
         self.addNode(node: Node(value: value))
+    }
+    
+    func removeNode(withValue value: Int) {
+        self.removeNode(node: Node(value: value))
     }
     
     func traverse() -> [Int] {
