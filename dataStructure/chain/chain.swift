@@ -57,6 +57,16 @@ class LinkedList {
         self.removeNode(node: Node(value: value))
     }
     
+    func length() -> Int {
+        var length: Int  = 0
+        var current: Node = self.head
+        while current.next != nil {
+            current = current.next!
+            length += 1
+        }
+        return length
+    }
+    
     func traverse() -> [Int] {
         var results: [Int] = []
         var current: Node = self.head

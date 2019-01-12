@@ -23,5 +23,8 @@ class detail: UIViewController {
         list.removeNode(withValue: 5)
         results = list.traverse()
         print("删除值为5的节点: \(results)")
+        
+        let length = list.length()
+        print("测长：\(length)")
     }
 }
