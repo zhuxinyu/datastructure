@@ -20,11 +20,18 @@ class detail: UIViewController {
         var results = list.traverse()
         print("创建单链表: \(results)")
         
-        list.removeNode(withValue: 5)
-        results = list.traverse()
-        print("删除值为5的节点: \(results)")
+//        list.removeNode(withValue: 5)
+//        results = list.traverse()
+//        print("删除值为5的节点: \(results)")
         
         let length = list.length()
         print("测长：\(length)")
+        
+        if length > 1 {
+            list.reverse()
+            results = list.traverse()
+            print("反转：\(results)")
+        }
+        
     }
 }

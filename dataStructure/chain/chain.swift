@@ -20,7 +20,7 @@ class Node {
 
 class LinkedList {
     
-    let head: Node
+    var head: Node
     
     init(node: Node) {
         self.head = node
@@ -65,6 +65,22 @@ class LinkedList {
             length += 1
         }
         return length
+    }
+    
+    func reverse() {
+        var head: Node? = self.head.next
+        var reverseHead: Node?
+        var pre: Node?
+        while head != nil {
+            let current = head?.next
+            if current == nil {
+                reverseHead = head
+            }
+            head?.next = pre
+            pre = head
+            head = current
+        }
+        self.head = Node(value: 4, next: reverseHead)
     }
     
     func traverse() -> [Int] {
