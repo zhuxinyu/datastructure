@@ -36,6 +36,17 @@ class detail: UIViewController {
         list.removeNode(nodeValue: 5)
         results = list.traverse()
         content = "\(content) \n\n 删除值为5的节点: \(results)"
+        
+        let length = list.length()
+        content = "\(content) \n\n 测长：\(length)"
+        
+        if length > 1 {
+            list.reverse()
+            results = list.traverse()
+            let str: String = "\(content) \n\n 反转：\(results)"
+            content = str.replacingOccurrences(of: "\"", with: "")
+        }
+        
         textView.text = content
 
     }

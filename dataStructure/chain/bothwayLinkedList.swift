@@ -62,12 +62,38 @@ class bothWayList {
         self.removeNode(node: bothWayNode(value: value))
     }
     
+    func length() -> Int {
+        var length: Int = 0
+        var current: bothWayNode = self.head
+        while current.next != nil {
+            current = current.next!
+            length += 1
+        }
+        return length
+    }
+    
+    func reverse() {
+        var current: bothWayNode? = self.head
+        while current != nil {
+            let temp:bothWayNode? = current?.pre
+            current?.pre = current?.next
+            current?.next = temp
+            if (current?.pre == nil) {
+                self.head = current!
+                break
+            }
+            current = current?.pre
+        }
+    }
+    
     func traverse() -> [Int: Any] {
         var results: [Int: Any] = [:]
         var current: bothWayNode = self.head
         while current.next != nil {
+            let preValue = current.pre != nil ? "\(current.pre!.value)" : "nil"
+            let nextValue = current.next != nil ? "\(current.next!.value)" : "nil"
+            results[current.value] = ["pre": preValue , "next": nextValue]
             current = current.next!
-            results[current.value] = ["pre": current.pre?.value, "next": current.next?.value]
         }
         return results
     }
