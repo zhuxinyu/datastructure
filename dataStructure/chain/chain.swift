@@ -6,6 +6,8 @@
 //  Copyright © 2018 havefun. All rights reserved.
 //
 
+// 单链表 / 循环链表 (特殊的单链表： tail.next => head)
+
 import Foundation
 
 class Node {

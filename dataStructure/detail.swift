@@ -15,7 +15,29 @@ class detail: UIViewController {
         super.viewDidLoad()
         if self.title == "单链表" {
             chain()
+        } else if self.title == "双向链表" {
+            bothWayChain()
         }
+    }
+    
+    func bothWayChain() {
+        var content: String = ""
+        let list = bothWayList(nodeValue: 1)
+        list.addNode(nodeValue: 2)
+        list.addNode(nodeValue: 3)
+        list.addNode(nodeValue: 4)
+        list.addNode(nodeValue: 5)
+        list.addNode(nodeValue: 6)
+        list.addNode(nodeValue: 7)
+        
+        var results = list.traverse()
+        content = " 创建双向链表：\n \(results)"
+        
+        list.removeNode(nodeValue: 5)
+        results = list.traverse()
+        content = "\(content) \n\n 删除值为5的节点: \(results)"
+        textView.text = content
+
     }
     
     func chain() {
