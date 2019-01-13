@@ -137,17 +137,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6g-8d-Bt6">
-                                <rect key="frame" x="65" y="153" width="236" height="360"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rgO-r5-f68">
+                                <rect key="frame" x="0.0" y="115.5" width="375" height="500"/>
+                                <color key="backgroundColor" red="0.70980392160000005" green="0.8980392157" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="DT4-p5-aL9"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="6Os-gN-Rjc" id="94v-We-ouj"/>
+                                </connections>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.70980392160000005" green="0.8980392157" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rgO-r5-f68" firstAttribute="centerY" secondItem="50w-2Q-MIZ" secondAttribute="centerY" id="ANa-gw-LJW"/>
+                            <constraint firstItem="rgO-r5-f68" firstAttribute="leading" secondItem="50w-2Q-MIZ" secondAttribute="leading" id="Exv-zT-nIL"/>
+                            <constraint firstItem="rgO-r5-f68" firstAttribute="trailing" secondItem="50w-2Q-MIZ" secondAttribute="trailing" id="czO-r8-cLH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="50w-2Q-MIZ"/>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="rgO-r5-f68" id="HHX-h5-E4e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7C5-I3-LdD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

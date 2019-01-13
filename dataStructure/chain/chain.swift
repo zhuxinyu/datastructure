@@ -57,6 +57,12 @@ class LinkedList {
         self.removeNode(node: Node(value: value))
     }
     
+    func removeHead() {
+        if self.head.next != nil {
+            self.head = self.head.next!
+        }
+    }
+    
     func length() -> Int {
         var length: Int  = 0
         var current: Node = self.head
