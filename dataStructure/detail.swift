@@ -47,6 +47,20 @@ class detail: UIViewController {
             content = str.replacingOccurrences(of: "\"", with: "")
         }
         
+        func Josephus(total:Int, out:Int) -> Int{
+            let n = total
+            let m = out
+            var temp = 0
+            for i in 1...n {
+                print("temp = \(temp), m = \(m), i = \(i)， result = \((temp + m) % i)")
+                temp = (temp + m) % i
+            }
+            return temp + 1
+        }
+        
+        let liveMan = Josephus(total: 6, out: 2)
+        content = "\(content) \n\n 约瑟夫环：总人数6，关键数2, 存活人编号:\(liveMan)"
+        
         textView.text = content
 
     }
