@@ -98,4 +98,28 @@ class bothWayList {
         return results
     }
     
+    func Josephus(out:Int) -> Int{
+        let m = out // 每报到此数移除节点
+        var current: bothWayNode = self.head
+        while current.next != nil {
+            current = current.next!
+        }
+        self.head.pre = current
+        current.next = self.head // 循环双向链表
+        
+        var tempCount = 1 // 报数从1开始
+        current = self.head // 指针回到原点
+        while current.next?.value != current.value {
+            if (tempCount == m) {
+                current.pre?.next = current.next
+                current.next?.pre = current.pre
+                tempCount = 0 // 删除节点后 重新计数
+            }
+            tempCount += 1
+            current = current.next!
+        }
+        
+        return current.value
+    }
+    
 }

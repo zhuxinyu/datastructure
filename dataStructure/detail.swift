@@ -47,7 +47,8 @@ class detail: UIViewController {
             content = str.replacingOccurrences(of: "\"", with: "")
         }
         
-        func Josephus(total:Int, out:Int) -> Int{
+        // 约瑟夫环：解法1：循环
+        func Josephus(circulation total:Int, out:Int) -> Int{
             let n = total
             let m = out
             var temp = 0
@@ -58,10 +59,21 @@ class detail: UIViewController {
             return temp + 1
         }
         
-        let liveMan = Josephus(total: 6, out: 2)
-        content = "\(content) \n\n 约瑟夫环：总人数6，关键数2, 存活人编号:\(liveMan)"
+        // 约瑟夫环：解法1：递归
+        func Josephus(recursion total:Int, out:Int) -> Int {
+            if(total == 1) { return 0 }
+            return (Josephus(recursion: total - 1, out: out) + out) % total
+        }
+
+        var liveMan = Josephus(circulation: 5, out: 2)
+        content = "\(content) \n\n 约瑟夫环-循环：总人数5，关键数2, 存活人编号:\(liveMan)"
         
-        textView.text = content
+        liveMan = Josephus(recursion: 5, out: 2) + 1
+        content = "\(content) \n\n 约瑟夫环-递归：总人数5，关键数2, 存活人编号:\(liveMan)"
+        
+        // 约瑟夫环： 解法3：双向循环链表
+        liveMan = list.Josephus(out: 2)
+        textView.text = "\(content) \n\n 约瑟夫环链表：总人数\(length + 1)，关键数2, 存活人编号:\(liveMan)"
 
     }
     
