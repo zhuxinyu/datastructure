@@ -59,6 +59,7 @@ class detail: UIViewController {
             return temp + 1
         }
         
+        // 数学思路：新环是由(上一步环中编号-最大报数值)% 上一步总人数 得到的，所以逆推时可以由(新环中的数字 + 最大报数值 )% 上一步总人数 取得上一步环数
         // 约瑟夫环：解法1：递归
         func Josephus(recursion total:Int, out:Int) -> Int {
             if(total == 1) { return 0 }
