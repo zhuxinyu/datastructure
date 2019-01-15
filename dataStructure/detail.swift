@@ -19,7 +19,26 @@ class detail: UIViewController {
             bothWayChain()
         } else if self.title == "约瑟夫环" {
             JosephusCircle()
+        } else if self.title == "回文字符串" {
+            plalindrome()
         }
+    }
+    
+    func plalindrome() {
+        var content: String = ""
+        let list = bothWayList(nodeValue: 1)
+        list.addNode(nodeValue: 2)
+        list.addNode(nodeValue: 3)
+        list.addNode(nodeValue: 2)
+        list.addNode(nodeValue: 1)
+        
+        let results = list.traverse()
+        content = " 创建双向链表：\n \(results)"
+        
+        let isP:String = list.isPlalindrome() ? "是" : "否"
+        content = "\(content) \n\n 是否回文：\(isP)"
+        
+        textView.text = content
     }
     
     func JosephusCircle() {

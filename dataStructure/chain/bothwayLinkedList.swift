@@ -72,8 +72,8 @@ class bothWayList {
         return length
     }
     
-    func reverse() {
-        var current: bothWayNode? = self.head
+    func reverse(head: bothWayNode? = nil) {
+        var current: bothWayNode? = head ?? self.head
         while current != nil {
             let temp:bothWayNode? = current?.pre
             current?.pre = current?.next
@@ -120,6 +120,25 @@ class bothWayList {
         }
         
         return current.value
+    }
+    
+    func isPlalindrome() -> Bool {
+        var fast: bothWayNode = self.head
+        var slow: bothWayNode = self.head
+        while fast.next != nil && fast.next!.next != nil {
+            fast = fast.next!.next!
+            slow = slow.next!
+        }
+        let mid:bothWayNode = slow
+        reverse(head: mid)
+        
+        fast = self.head // slow是中间 fast重置为头部 两个指针同时进行比较
+        while slow.next != nil && fast.next != nil {
+            if (fast.value != slow.value) { return false }
+            fast = fast.next!
+            slow = slow.next!
+        }
+        return true
     }
     
 }
