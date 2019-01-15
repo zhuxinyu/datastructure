@@ -92,6 +92,7 @@ class detail: UIViewController {
             let str: String = "\(content) \n\n 反转：\(results)"
             content = str.replacingOccurrences(of: "\"", with: "")
         }
+        textView.text = content
     }
     
     func chain() {
