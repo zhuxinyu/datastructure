@@ -75,7 +75,7 @@ class LinkedList {
         return length
     }
     
-    func reverse(node: Node? = nil) {
+    func reverse(node: Node? = nil) { // 若传入node 则node后进行反转
         var head: Node? = node?.next ?? self.head.next
         var reverseHead: Node?
         var pre: Node?
