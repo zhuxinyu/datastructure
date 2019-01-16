@@ -29,8 +29,10 @@ class detail: UIViewController {
         let list = LinkedList(nodeValue: 1)
         list.addNode(withValue: 2)
         list.addNode(withValue: 3)
+//        list.addNode(withValue: 3)
         list.addNode(withValue: 2)
         list.addNode(withValue: 1)
+//        list.addNode(withValue: 0)
         
         let results = list.traverse()
         content = " 创建单链表：\n \(results)"

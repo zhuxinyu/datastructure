@@ -76,7 +76,7 @@ class LinkedList {
     }
     
     func reverse(node: Node? = nil) {
-        var head: Node? = node ?? self.head.next
+        var head: Node? = node?.next ?? self.head.next
         var reverseHead: Node?
         var pre: Node?
         while head != nil {
@@ -88,8 +88,8 @@ class LinkedList {
             pre = head
             head = current
         }
-        if (head != nil) {
-            head?.next = reverseHead
+        if (node != nil) {
+            node?.next = reverseHead
         } else {
             self.head = Node(value: 4, next: reverseHead)
         }
@@ -113,12 +113,12 @@ class LinkedList {
             slow = slow.next!
         }
         
-        var mid:Node = slow // 奇数链
+        let mid:Node = slow
+        reverse(node: mid) // 后半段链表反转
+
         if (fast.next != nil) { // 偶数链
-            mid = slow.next!
+            slow = slow.next!
         }
-        
-        reverse(node: mid)
         
         fast = self.head // slow是中间 fast重置为头部 两个指针同时进行比较
         while slow.next != nil && fast.next != nil {
