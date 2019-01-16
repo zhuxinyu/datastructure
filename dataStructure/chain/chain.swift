@@ -117,9 +117,7 @@ class LinkedList {
         let mid:Node = slow
         reverse(node: mid) // 后半段链表反转
 
-        if (fast.next != nil) { // 偶数链
-            slow = slow.next!
-        }
+        slow = slow.next! // slow指向后半段链表头部
         
         fast = self.head // slow是中间 fast重置为头部 两个指针同时进行比较
         while slow.next != nil && fast.next != nil {
