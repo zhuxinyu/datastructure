@@ -109,7 +109,7 @@ class LinkedList {
     func isPlalindrome() -> Bool {
         var fast: Node = self.head // 声明快慢指针
         var slow: Node = self.head
-        while fast.next != nil && fast.next!.next != nil { // 若快慢有一方到达终点 停止前进
+        while fast.next?.next != nil { // 快指针一定先到达终点 停止前进
             fast = fast.next!.next!
             slow = slow.next!
         }
@@ -120,7 +120,7 @@ class LinkedList {
         slow = slow.next! // slow指向后半段链表头部
         
         fast = self.head // slow是中间 fast重置为头部 两个指针同时进行比较
-        while slow.next != nil && fast.next != nil {
+        while slow.next != nil { // 慢指针从后半段开始 一定先到达或跟快指针同时到达终点
             if (fast.value != slow.value) { return false }
             fast = fast.next!
             slow = slow.next!
