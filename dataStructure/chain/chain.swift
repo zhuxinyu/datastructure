@@ -99,9 +99,10 @@ class LinkedList {
         var results: [Int] = []
         var current: Node = self.head
         while current.next != nil {
-            current = current.next!
             results.append(current.value)
+            current = current.next!
         }
+        results.append(current.value)
         return results
     }
     
