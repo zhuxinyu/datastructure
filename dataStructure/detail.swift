@@ -21,18 +21,40 @@ class detail: UIViewController {
             JosephusCircle()
         } else if self.title == "回文字符串" {
             plalindrome()
+        } else if self.title == "散列表" {
+            hashListDic()
         }
+    }
+    
+    func hashListDic() {
+        var content: String = ""
+        let list = hashList(withObj: 1)
+        var results = list.traverse()
+        content = " 创建数组：\n \(results)"
+ 
+        list.addNode(withObj: 2)
+        results = list.traverse()
+        content = "\(content) \n\n 增加对象：\n \(results)"
+        
+        list.insertAtIndex(index: 1, obj: 3)
+        results = list.traverse()
+        content = "\(content) \n\n 插入对象在第2个位置：\n \(results)"
+        
+        list.removeAtIndex(index: 1)
+        results = list.traverse()
+        content = "\(content) \n\n 删除对象在第2个位置：\n \(results)"
+        
+        textView.text = content
     }
     
     func plalindrome() {
         var content: String = ""
         let list = LinkedList(nodeValue: 1)
         list.addNode(withValue: 2)
-//        list.addNode(withValue: 3)
-//        list.addNode(withValue: 3)
-//        list.addNode(withValue: 2)
-//        list.addNode(withValue: 1)
-//        list.addNode(withValue: 0)
+        list.addNode(withValue: 3)
+        list.addNode(withValue: 3)
+        list.addNode(withValue: 2)
+        list.addNode(withValue: 1)
         
         let results = list.traverse()
         content = " 创建单链表：\n \(results)"
