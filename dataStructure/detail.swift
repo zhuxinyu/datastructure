@@ -28,7 +28,7 @@ class detail: UIViewController {
     
     func hashListDic() {
         var content: String = ""
-        let list = hashList(withObj: 1)
+        let list = arrayList(withObj: 1)
         var results = list.traverse()
         content = " 创建数组：\n \(results)"
  
@@ -44,6 +44,13 @@ class detail: UIViewController {
         results = list.traverse()
         content = "\(content) \n\n 删除对象在第2个位置：\n \(results)"
         
+        let dic:hashDic = hashDic()
+        dic.setValueforKey(value: 1, key: "test")
+        let data: arrayList = dic._keys._first?.obj as! arrayList
+        let r = data._first?.obj as! hashNode
+        
+        content = "\(content) \n\n 字典：存入key: \(r.key) value: \(r.value)"
+
         textView.text = content
     }
     
