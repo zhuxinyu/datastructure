@@ -105,15 +105,15 @@ class bothWayList {
             current = current.next!
         }
         self.head.pre = current
-        current.next = self.head // 循环双向链表
+        current.next = self.head // 连接首尾节点 - 形成循环双向链表
         
         var tempCount = 1 // 报数从1开始
         current = self.head // 指针回到原点
-        while current.next?.value != current.value {
+        while current.next?.value != current.value { // 只剩一个节点时跳出循环
             if (tempCount == m) {
                 current.pre?.next = current.next
                 current.next?.pre = current.pre
-                tempCount = 0 // 删除节点后 重新计数
+                tempCount = 0 // 删除节点后 重置报数
             }
             tempCount += 1
             current = current.next!

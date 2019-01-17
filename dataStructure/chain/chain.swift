@@ -109,13 +109,13 @@ class LinkedList {
     func isPlalindrome() -> Bool {
         var fast: Node = self.head // 声明快慢指针
         var slow: Node = self.head
-        if (self.head.next == nil) {
+        if (self.head.next == nil) { // 只有一个节点
             return true
         }
-        if (self.head.next?.next == nil) {
+        if (self.head.next?.next == nil) { // 只有两个节点
             return self.head.value == self.head.next?.value
         }
-        while fast.next?.next != nil { // 快指针一定先到达终点 停止前进
+        while fast.next?.next != nil { // 快指针一定先到达终点 停止前进 (三个节点及以上)
             fast = fast.next!.next!
             slow = slow.next!
         }
