@@ -47,7 +47,7 @@ class hashList {
         
         // 空数组时初始化
         if (_first == nil) {
-            _first = hashNode(obj: obj)
+            _first = hashNode(obj: node.obj)
             _last = _first
             return
         }
