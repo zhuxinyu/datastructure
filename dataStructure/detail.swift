@@ -45,11 +45,13 @@ class detail: UIViewController {
         content = "\(content) \n\n 删除对象在第2个位置：\n \(results)"
         
         let dic:hashDic = hashDic()
-        dic.setValueforKey(value: 1, key: "test")
+        dic.setValueforKey(value: 3, key: "test")
         let data: arrayList = dic._keys._first?.obj as! arrayList
         let r = data._first?.obj as! hashNode
-        
         content = "\(content) \n\n 字典：存入key: \(r.key) value: \(r.value)"
+        
+        let value:Any? = dic.valueForKey(key: r.key)
+        content = "\(content) \n\n 字典：取出key: \(r.key) value: \(String(describing: value))"
 
         textView.text = content
     }

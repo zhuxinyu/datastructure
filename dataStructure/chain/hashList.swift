@@ -178,14 +178,15 @@ class hashDic {
     
     func setValueforKey(value:Any, key:String) {
         let hash: Int = key.hashValue
-        hashcode = hash % (MemoryLayout.size(ofValue: value) / 8)
+        hashcode = hash % (MemoryLayout.size(ofValue: _keys) / 8)
         hashcode = 0
         // 存数据的数组
         let dataArray: arrayList? = _keys.objAtIndex(index: hashcode)?.obj as? arrayList
         if (dataArray != nil) {
             for i in 0..<dataArray!._size {
-                if (key == dataArray!.objAtIndex(index: i)?.obj as? String) {
-                    dataArray!.objAtIndex(index: i)!.obj = value
+                let obj: hashNode? = dataArray?.objAtIndex(index: i)?.obj as? hashNode
+                if (obj != nil && key == obj!.key) {
+                    obj!.value = value
                     return
                 }
             }
@@ -196,5 +197,23 @@ class hashDic {
             let tempary = arrayList(obj: tempdic)
             _keys.insertAtIndex(index: hashcode, obj: tempary)
         }
+    }
+    
+    func valueForKey(key:String) -> Any?{
+        let hash: Int = key.hashValue
+        hashcode = hash % (MemoryLayout.size(ofValue: _keys) / 8)
+        hashcode = 0
+        
+        // 存数据的数组
+        let dataArray: arrayList? = _keys.objAtIndex(index: hashcode)?.obj as? arrayList
+        if (dataArray != nil) {
+            for i in 0..<dataArray!._size {
+                let obj: hashNode? = dataArray?.objAtIndex(index: i)?.obj as? hashNode
+                if (obj != nil && key == obj!.key) {
+                    return obj!.value
+                }
+            }
+        }
+        return nil
     }
 }
