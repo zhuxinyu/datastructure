@@ -23,7 +23,51 @@ class detail: UIViewController {
             plalindrome()
         } else if self.title == "散列表" {
             hashListDic()
+        } else if self.title == "顺序栈" {
+            sequenceStack()
+        } else if self.title == "顺序队列" {
+            sequenceQueue()
         }
+    }
+    
+    func sequenceStack() {
+        var content: String = ""
+        var stack = IntegerStack()
+        content = " 创建顺序栈：\n \(stack)"
+        
+        stack.push(1)
+        stack.push(2)
+        stack.push(3)
+        stack.push(4)
+        stack.push(5)
+        content = "\(content) \n\n 压栈对象1,2，3，4，5：\n \(stack)"
+        
+        var obj = stack.pop()
+        content = "\(content) \n\n 出栈对象：\(String(describing: obj)) 栈结果: \(stack)"
+        
+        obj = stack.pop()
+        content = "\(content) \n\n 出栈对象：\(String(describing: obj)) 栈结果: \(stack)"
+        textView.text = content
+    }
+    
+    func sequenceQueue() {
+        var content: String = ""
+        var queue = IntegerQueue()
+        content = " 创建顺序队列：\n \(queue)"
+        
+        queue.enqueue(1)
+        queue.enqueue(2)
+        queue.enqueue(3)
+        queue.enqueue(4)
+        queue.enqueue(5)
+        content = "\(content) \n\n 入队对象1,2,3,4,5：\n \(queue)"
+        
+        var obj = queue.dequeue()
+        content = "\(content) \n\n 出队对象：\(String(describing: obj)) 队列结果: \(queue)"
+        
+        obj = queue.dequeue()
+        content = "\(content) \n\n 出队对象：\(String(describing: obj)) 队列结果: \(queue)"
+        textView.text = content
     }
     
     func hashListDic() {
@@ -94,7 +138,7 @@ class detail: UIViewController {
             let m = out
             var temp = 0
             for i in 1...n {
-                print("temp = \(temp), m = \(m), i = \(i)， result = \((temp + m) % i)")
+//                print("temp = \(temp), m = \(m), i = \(i)， result = \((temp + m) % i)")
                 temp = (temp + m) % i
             }
             return temp + 1
