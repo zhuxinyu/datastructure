@@ -41,3 +41,43 @@ struct IntegerQueue: Queue {
         return left.popLast()
     }
 }
+
+class linkedQueue {
+    var head:Node?
+    var tail:Node?
+    
+    func enqueue(value: Int) {
+        let node:Node = Node(value: value)
+        if (self.head == nil) {
+            self.head = node
+            self.tail = self.head
+            return
+        }
+        self.tail?.next = node
+        self.tail = node
+    }
+    
+    func dequeue() -> Node? {
+        if (self.head == nil) {
+            return nil
+        }
+        let temp: Node = self.head!
+        if (self.head?.next == nil) {
+            self.head = nil
+            self.tail = nil
+            return temp
+        }
+        self.head = self.head?.next
+        return temp
+    }
+    
+    func traverse() -> [Int] {
+        var results: [Int] = []
+        var current: Node? = self.head
+        while current != nil {
+            results.append(current!.value)
+            current = current?.next
+        }
+        return results
+    }
+}

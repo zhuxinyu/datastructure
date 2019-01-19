@@ -29,12 +29,35 @@ class detail: UIViewController {
             sequenceQueue()
         } else if self.title == "链式栈" {
             linkStack()
+        } else if self.title == "链式队列" {
+            linkQueue()
         }
+    }
+    
+    func linkQueue() {
+        var content: String = ""
+        let queue: linkedQueue = linkedQueue()
+        content = " 创建链式栈：\n \(queue.traverse())"
+    
+        queue.enqueue(value: 1)
+        queue.enqueue(value: 2)
+        queue.enqueue(value: 3)
+        queue.enqueue(value: 4)
+        queue.enqueue(value: 5)
+        
+        content = "\(content) \n\n 入队对象1, 2，3，4，5：\n \(queue.traverse())"
+        
+        var obj = queue.dequeue()
+        content = "\(content) \n\n 出队对象：\(String(describing: obj?.value)) 队列结果: \(queue.traverse())"
+        
+        obj = queue.dequeue()
+        content = "\(content) \n\n 出队对象：\(String(describing: obj?.value)) 队列结果: \(queue.traverse())"
+        textView.text = content
     }
     
     func linkStack() {
         var content: String = ""
-        let stack = linkedStack()
+        let stack: linkedStack = linkedStack()
         content = " 创建链式栈：\n \(stack.traverse())"
         
         stack.push(value: 1)
