@@ -42,3 +42,39 @@ struct IntegerStack: Stack {
     
 }
 
+class linkedStack {
+    var top: Node?
+    var size: Int = 0
+
+    func push(value: Int) {
+        size += 1
+        let node = Node(value: value)
+        if (self.top == nil) {
+            self.top = node
+            return
+        }
+        node.next = self.top
+        self.top = node
+    }
+    
+    func pop() -> Node? {
+        if (self.top == nil) {
+            return nil
+        }
+        size -= 1
+        let temp = self.top
+        self.top = self.top?.next
+        return temp
+    }
+    
+    func traverse() -> [Int] {
+        var results: [Int] = []
+        var current: Node? = self.top
+        while current != nil {
+            results.append(current!.value)
+            current = current?.next
+        }
+        return results
+    }
+}
+

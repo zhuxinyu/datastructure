@@ -27,7 +27,30 @@ class detail: UIViewController {
             sequenceStack()
         } else if self.title == "顺序队列" {
             sequenceQueue()
+        } else if self.title == "链式栈" {
+            linkStack()
         }
+    }
+    
+    func linkStack() {
+        var content: String = ""
+        let stack = linkedStack()
+        content = " 创建链式栈：\n \(stack.traverse())"
+        
+        stack.push(value: 1)
+        stack.push(value: 2)
+        stack.push(value: 3)
+        stack.push(value: 4)
+        stack.push(value: 5)
+        
+        content = "\(content) \n\n 压栈对象1, 2，3，4，5：\n \(stack.traverse())"
+        
+        var obj = stack.pop()
+        content = "\(content) \n\n 出栈对象：\(String(describing: obj?.value)) 栈结果: \(stack.traverse())"
+        
+        obj = stack.pop()
+        content = "\(content) \n\n 出栈对象：\(String(describing: obj?.value)) 栈结果: \(stack.traverse())"
+        textView.text = content
     }
     
     func sequenceStack() {
@@ -40,7 +63,7 @@ class detail: UIViewController {
         stack.push(3)
         stack.push(4)
         stack.push(5)
-        content = "\(content) \n\n 压栈对象1,2，3，4，5：\n \(stack)"
+        content = "\(content) \n\n 压栈对象1, 2，3，4，5：\n \(stack)"
         
         var obj = stack.pop()
         content = "\(content) \n\n 出栈对象：\(String(describing: obj)) 栈结果: \(stack)"
@@ -60,7 +83,7 @@ class detail: UIViewController {
         queue.enqueue(3)
         queue.enqueue(4)
         queue.enqueue(5)
-        content = "\(content) \n\n 入队对象1,2,3,4,5：\n \(queue)"
+        content = "\(content) \n\n 入队对象1, 2,3,4,5：\n \(queue)"
         
         var obj = queue.dequeue()
         content = "\(content) \n\n 出队对象：\(String(describing: obj)) 队列结果: \(queue)"
