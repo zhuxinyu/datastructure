@@ -19,6 +19,7 @@ class queueCycle {
         self.size = max(0, size)
     }
     
+    // 判断数组循环或tail保存位置时队满可用(tail+1) %n == head
     func enqueue(value: Int) {
         let node: Node = Node(value: value)
         if (length == size) { // 队满不进入 阻塞
