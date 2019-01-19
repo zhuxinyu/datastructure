@@ -31,7 +31,35 @@ class detail: UIViewController {
             linkStack()
         } else if self.title == "链式队列" {
             linkQueue()
+        } else if self.title == "循环队列" {
+            circulationQueue()
         }
+    }
+    
+    func circulationQueue(){
+        var content: String = ""
+        let queue: queueCycle = queueCycle(size: 6)
+        content = " 创建循环队列：\n \(queue.traverse()) 队列容量: \(queue.size)"
+        
+        queue.enqueue(value: 1)
+        queue.enqueue(value: 2)
+        queue.enqueue(value: 3)
+        queue.enqueue(value: 4)
+        queue.enqueue(value: 5)
+        queue.enqueue(value: 6)
+        queue.enqueue(value: 7)
+        
+        content = "\(content) \n\n 入队对象1, 2，3，4，5, 6, 7：\n 队列长度：\(queue.length) \n \(queue.traverse())"
+        
+        var obj = queue.dequeue()
+        content = "\(content) \n\n 出队对象：\(String(describing: obj?.value)) \n 队列长度：\(queue.length) 队列结果: \(queue.traverse())"
+        
+        obj = queue.dequeue()
+        content = "\(content) \n\n 出队对象：\(String(describing: obj?.value)) \n 队列长度：\(queue.length) 队列结果: \(queue.traverse())"
+        
+        queue.enqueue(value: 7)
+        content = "\(content) \n\n 入队对象：7 \n 队列长度：\(queue.length) 队列结果: \(queue.traverse())"
+        textView.text = content
     }
     
     func linkQueue() {
