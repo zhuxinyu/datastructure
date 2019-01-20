@@ -33,7 +33,34 @@ class detail: UIViewController {
             linkQueue()
         } else if self.title == "循环队列" {
             circulationQueue()
+        } else if self.title == "用栈实现队列" {
+            stackableQueue()
         }
+    }
+    
+    func stackableQueue() {
+        var content: String = ""
+        let queue: stackQueue = stackQueue()
+        content = " 创建链式栈：\n \(String(describing: queue.deStack?.traverse()))"
+        
+        queue.enqueue(value: 1)
+        queue.enqueue(value: 2)
+        queue.enqueue(value: 3)
+        queue.enqueue(value: 4)
+        queue.enqueue(value: 5)
+        
+        content = "\(content) \n\n 入队对象1, 2，3，4，5：\n \(String(describing: queue.enStack?.traverse()))"
+        
+        var obj = queue.dequeue()
+        content = "\(content) \n\n 出队对象：\(String(describing: obj?.value)) 出队结果: \(String(describing: queue.deStack?.traverse())) \n 入队结果： \(String(describing: queue.enStack?.traverse()))"
+        
+        queue.enqueue(value: 6)
+        
+        content = "\(content) \n\n 入队对象：6 出队结果: \(String(describing: queue.deStack?.traverse())) \n 入队结果： \(String(describing: queue.enStack?.traverse()))"
+        
+        obj = queue.dequeue()
+        content = "\(content) \n\n 出队对象：\(String(describing: obj?.value)) 出队结果: \(String(describing: queue.deStack?.traverse())) \n 入队结果： \(String(describing: queue.enStack?.traverse()))"
+        textView.text = content
     }
     
     func circulationQueue(){

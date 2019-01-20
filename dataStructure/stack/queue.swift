@@ -81,3 +81,29 @@ class linkedQueue {
         return results
     }
 }
+
+class stackQueue {
+    var enStack: linkedStack?
+    var deStack: linkedStack?
+    
+    func enqueue(value: Int) {
+        if (enStack == nil) {
+            enStack = linkedStack()
+        }
+        enStack?.push(value: value)
+    }
+    
+    func dequeue() -> Node? {
+        if (deStack == nil) {
+            deStack = linkedStack()
+        }
+        if (deStack?.size == 0 && enStack?.size ?? 0 > 0) {
+            for _ in 0..<enStack!.size {
+                deStack?.push(value: enStack!.pop()!.value)
+            }
+        }
+        let popNode:Node? = deStack?.pop()
+        return popNode
+    }
+
+}
