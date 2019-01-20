@@ -35,7 +35,26 @@ class detail: UIViewController {
             circulationQueue()
         } else if self.title == "用栈实现队列" {
             stackableQueue()
+        } else if self.title == "表达式求值" {
+            calculator()
         }
+    }
+    
+    func calculator() {
+        var content: String = ""
+        let stack:evalStack = evalStack()
+        content = "创建求值栈：\n \(stack.result)"
+        
+        stack.pushNum(value: 2)
+        stack.pushOperator(op: 1)
+        stack.pushNum(value: 3)
+        stack.pushOperator(op: 2)
+        stack.pushNum(value: 5)
+        content = "\(content) \n\n 数字队列：\(String(describing: stack.numStack?.traverse())) 操作符队列:\(String(describing: stack.operatorStack?.traverse()))"
+
+        let result = stack.eval()
+        content = "\(content) \n\n 结果: \(result)"
+        textView.text = content
     }
     
     func stackableQueue() {

@@ -78,3 +78,67 @@ class linkedStack {
     }
 }
 
+class evalStack {
+    var result:Int = 0
+    var numStack: linkedStack?
+    var operatorStack: linkedStack?
+    
+    init() {
+        numStack = linkedStack()
+        operatorStack = linkedStack()
+    }
+    
+    func pushNum(value:Int) {
+        if (isMatch()) { // 数字跟操作符数量不匹配
+            return
+        }
+        if (operatorStack?.size ?? 0 > 0) {
+            let tempOp:Node = operatorStack!.pop()!
+            if (tempOp.value == 2 || tempOp.value == 3) {
+                if let tempNum:Node = numStack?.pop() {
+                    var result:Int = 0
+                    if (tempOp.value == 2) { result = tempNum.value * value }
+                    if (tempOp.value == 3) { result = tempNum.value / value }
+                    numStack?.push(value: result)
+                    return
+                }
+            } else {
+                operatorStack?.push(value: tempOp.value)
+                numStack?.push(value: value)
+            }
+            return
+        }
+        numStack?.push(value: value)
+    }
+    
+    // 0:+ 1:- 2:x 3:/
+    func pushOperator(op: Int) {
+        if (isMatch()) { // 数字跟操作符数量不匹配
+            return
+        }
+        operatorStack?.push(value: op)
+    }
+    
+    func eval() -> Int{
+        if (operatorStack?.size == 0 ) {
+            return numStack?.pop()?.value ?? 0
+        }
+        if (operatorStack?.size == numStack?.size) {
+            operatorStack?.pop()
+        }
+        for _ in 0..<operatorStack!.size {
+            if let tempop: Node = operatorStack?.pop(), let tempNum_1:Node = numStack?.pop(), let tempNum_2:Node = numStack?.pop() {
+                var result:Int = 0
+                if (tempop.value == 0) { result = tempNum_1.value + tempNum_2.value }
+                if (tempop.value == 1) { result = tempNum_2.value - tempNum_1.value }
+                numStack?.push(value: result)
+            }
+        }
+        return numStack?.pop()?.value ?? 0
+    }
+    
+    func isMatch() -> Bool {
+        return numStack?.size ?? 0 > (operatorStack?.size ?? 0) + 1 // 数字跟操作符数量不匹配
+    }
+}
+
