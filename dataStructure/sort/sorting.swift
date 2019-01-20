@@ -56,5 +56,24 @@ class sorting {
         }
         return result
     }
+    
+    func select(data:[Int]) -> [Int]{
+        var result:[Int] = data
+        var location:Int = 0
+        for i in 0..<result.count {
+            var min:Int = result[i]
+            location = i
+            for j in i..<result.count {
+                if (min > result[j]) {
+                    min = result[j]
+                    location = j
+                }
+            }
+            let temp:Int = result[i]
+            result[i] = min
+            result[location] = temp
+        }
+        return result
+    }
 }
 

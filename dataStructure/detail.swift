@@ -41,7 +41,19 @@ class detail: UIViewController {
             bubblingsort()
         } else if self.title == "插入排序" {
             insertSort()
+        } else if self.title == "选择排序" {
+            selectSort()
         }
+    }
+    
+    func selectSort(){
+        var content: String = ""
+        let data:[Int] = [5,6,4,7,3,8,2,9,1]
+        content = " 原始数据：\n \(data)"
+        
+        let selectSort:[Int] = sorting().select(data: data)
+        content = "\(content) \n\n 选择排序: \n\n \(selectSort) \n 平均时间复杂度O(n^2)"
+        textView.text = content
     }
     
     func bubblingsort() {
