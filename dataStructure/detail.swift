@@ -37,7 +37,20 @@ class detail: UIViewController {
             stackableQueue()
         } else if self.title == "表达式求值" {
             calculator()
+        } else if self.title == "冒泡排序" {
+            bubblingsort()
         }
+    }
+    
+    func bubblingsort() {
+        var content: String = ""
+        let data:[Int] = [9,8,7,6,5,4,3,2,1]
+        content = " 原始数据：\n \(data)"
+
+        let bubbling:[Int] = sorting().bubbling(data: data)
+        content = "\(content) \n\n 冒泡排序: \n\n \(bubbling)"
+        textView.text = content
+        
     }
     
     func calculator() {
