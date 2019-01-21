@@ -54,7 +54,7 @@ class detail: UIViewController {
         content = " 原始数据：\n \(data)"
         
         sorting().shell(&data)
-        content = "\(content) \n\n 选择排序: \n\n \(data) \n 平均时间复杂度O(n*logn)"
+        content = "\(content) \n\n 希尔排序: \n\n \(data) \n 平均时间复杂度O(n*logn)"
         textView.text = content
     }
     
