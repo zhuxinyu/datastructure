@@ -97,7 +97,6 @@ class sorting {
             }
             gap = gap / 2
         }
-        print(times)
     }
     
     // 插入排序 - 原表排序 （希尔排序是在插入排序的基础上进行了分组排序优化，原表排序不会增加时间和空间复杂度）
@@ -112,6 +111,54 @@ class sorting {
                 times += 1
             }
         }
+    }
+    
+    func mergeSort(_ array:[Int]) -> [Int] {
+        guard array.count > 1 else { return array }
+        
+        let middleIndex = array.count / 2
+        
+        let leftArray = mergeSort(Array(array[0..<middleIndex]))
+        
+        let rightArray = mergeSort(Array(array[middleIndex..<array.count]))
+        
+        print("left = \(leftArray), right = \(rightArray)")
+        
+        return merge(leftPile: leftArray, rightPile: rightArray)
+    }
+    
+    func merge(leftPile: [Int], rightPile: [Int]) -> [Int] {
+        var leftIndex = 0
+        var rightIndex = 0
+        
+        var orderPile = [Int]()
+        
+        while leftIndex < leftPile.count && rightIndex < rightPile.count {
+            if leftPile[leftIndex] < rightPile[rightIndex] {
+                orderPile.append(leftPile[leftIndex])
+                leftIndex += 1
+            } else if (leftPile[leftIndex] > rightPile[rightIndex]){
+                orderPile.append(rightPile[rightIndex])
+                rightIndex += 1
+            } else {
+                orderPile.append(leftPile[leftIndex])
+                orderPile.append(rightPile[rightIndex])
+                leftIndex += 1
+                rightIndex += 1
+            }
+        }
+        
+        if leftIndex < leftPile.count {
+            orderPile.append(leftPile[leftIndex])
+            leftIndex += 1
+        }
+        
+        if rightIndex < rightPile.count {
+            orderPile.append(rightPile[rightIndex])
+            rightIndex += 1
+        }
+        
+        return orderPile
     }
     
 }

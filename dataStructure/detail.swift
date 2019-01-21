@@ -45,7 +45,19 @@ class detail: UIViewController {
             selectSort()
         } else if self.title == "希尔排序" {
             shellSort()
+        } else if self.title == "归并排序" {
+            mergeSort()
         }
+    }
+    
+    func mergeSort() {
+        var content: String = ""
+        let data:[Int] = [5,6,4,7,3,8,2,9,1]
+        content = " 原始数据：\n \(data)"
+        
+        let result = sorting().mergeSort(data)
+        content = "\(content) \n\n 希尔排序: \n\n \(result) \n 平均时间复杂度O(n*logn)"
+        textView.text = content
     }
     
     func shellSort() {
