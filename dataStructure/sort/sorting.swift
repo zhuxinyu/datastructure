@@ -113,6 +113,7 @@ class sorting {
         }
     }
     
+    // 归并排序 = 分而治之 + 递归
     func mergeSort(_ array:[Int]) -> [Int] {
         guard array.count > 1 else { return array }
         
