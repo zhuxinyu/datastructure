@@ -43,7 +43,19 @@ class detail: UIViewController {
             insertSort()
         } else if self.title == "选择排序" {
             selectSort()
+        } else if self.title == "希尔排序" {
+            shellSort()
         }
+    }
+    
+    func shellSort() {
+        var content: String = ""
+        var data:[Int] = [5,6,4,7,3,8,2,9,1]
+        content = " 原始数据：\n \(data)"
+        
+        sorting().shell(&data)
+        content = "\(content) \n\n 选择排序: \n\n \(data) \n 平均时间复杂度O(n*logn)"
+        textView.text = content
     }
     
     func selectSort(){
@@ -71,7 +83,7 @@ class detail: UIViewController {
         let data:[Int] = [5,6,4,7,3,8,2,9,1]
         content = " 原始数据：\n \(data)"
      
-        let insertSort:[Int] = sorting().insert(data: data)
+        let insertSort:[Int] = sorting().insert(data)
         content = "\(content) \n\n 插入排序: \n\n \(insertSort) \n 平均时间复杂度O(n^2)"
         textView.text = content
     }
