@@ -162,7 +162,6 @@ class sorting {
     
     func quicksortHoare<T: Comparable>(_ a: inout [T], low: Int, high: Int) {
         if low < high {
-            print("data = \(a) low = \(low) high = \(high)")
             let p = partitionHoare(&a, low: low, high: high) // 寻找标记点
             quicksortHoare(&a, low: low, high: p)
             quicksortHoare(&a, low: p + 1, high: high)
