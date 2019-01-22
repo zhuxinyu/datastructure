@@ -162,6 +162,7 @@ class sorting {
     
     func quicksortHoare<T: Comparable>(_ a: inout [T], low: Int, high: Int) {
         if low < high {
+            print("data = \(a) low = \(low) high = \(high)")
             let p = partitionHoare(&a, low: low, high: high) // 寻找标记点
             quicksortHoare(&a, low: low, high: p)
             quicksortHoare(&a, low: p + 1, high: high)
@@ -174,13 +175,13 @@ class sorting {
         var j = high + 1 // 同上
         
         while true {
-            repeat { j -= 1 } while a[j] > privot
-            repeat { i += 1 } while a[i] < privot
+            repeat { j -= 1 } while a[j] > privot // 左 <- 右  if [右] > 标记值 就一直移动指针 否则停止 返回当前位置 准备交换
+            repeat { i += 1 } while a[i] < privot // 左 -> 右  if [左] < 标记值 就一直移动指针 否则停止 返回当前位置 准备交换
             
-            if i < j {
+            if i < j { // 当左右指针还未相遇 交换值
                 a.swapAt(i, j)
             } else {
-                return j
+                return j // 当左右指针相遇 返回当前右指针位置
             }
         }
         
