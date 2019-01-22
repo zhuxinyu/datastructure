@@ -47,7 +47,19 @@ class detail: UIViewController {
             shellSort()
         } else if self.title == "归并排序" {
             mergeSort()
+        } else if self.title == "快速排序" {
+            quickSort()
         }
+    }
+    
+    func quickSort() {
+        var content: String = ""
+        var data:[Int] = [5,6,4,7,3,8,2,9,1]
+        content = " 原始数据：\n \(data)"
+        
+        sorting().quicksortHoare(&data, low: 0, high: data.count - 1)
+        content = "\(content) \n\n 希尔排序: \n\n \(data) \n 平均时间复杂度O(n*logn)"
+        textView.text = content
     }
     
     func mergeSort() {

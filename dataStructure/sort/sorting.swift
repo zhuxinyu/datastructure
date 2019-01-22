@@ -123,8 +123,6 @@ class sorting {
         
         let rightArray = mergeSort(Array(array[middleIndex..<array.count]))
         
-        print("left = \(leftArray), right = \(rightArray)")
-        
         return merge(leftPile: leftArray, rightPile: rightArray)
     }
     
@@ -160,6 +158,32 @@ class sorting {
         }
         
         return orderPile
+    }
+    
+    func quicksortHoare<T: Comparable>(_ a: inout [T], low: Int, high: Int) {
+        if low < high {
+            let p = partitionHoare(&a, low: low, high: high) // 寻找标记点
+            quicksortHoare(&a, low: low, high: p)
+            quicksortHoare(&a, low: p + 1, high: high)
+        }
+    }
+    
+    func partitionHoare<T: Comparable>(_ a: inout [T], low: Int, high: Int) -> Int {
+        let privot = a[low]
+        var i = low - 1 // do while避免越界
+        var j = high + 1 // 同上
+        
+        while true {
+            repeat { j -= 1 } while a[j] > privot
+            repeat { i += 1 } while a[i] < privot
+            
+            if i < j {
+                a.swapAt(i, j)
+            } else {
+                return j
+            }
+        }
+        
     }
     
 }
