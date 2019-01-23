@@ -61,7 +61,7 @@ class detail: UIViewController {
         let data:[Int] = [5,6,4,4,3,5,2,0,1]
         content = " 原始数据：\n \(data)"
         let result = sorting().countSort(array: data)
-        content = "\(content) \n\n 希尔排序: \n\n \(result) \n 平均时间复杂度O(n*logn)"
+        content = "\(content) \n\n 计数排序: \n\n \(result) \n 平均时间复杂度O(n*logn)"
         textView.text = content
     }
     
@@ -79,7 +79,7 @@ class detail: UIViewController {
 //        mainHeap.insert("lad07")
 
         
-        content = "\(content) \n\n 希尔排序: \n\n \(mainHeap.sorted()) \n 平均时间复杂度O(n*logn)"
+        content = "\(content) \n\n 桶排序: \n\n \(mainHeap.sorted()) \n 平均时间复杂度O(n*logn)"
         textView.text = content
     }
     
@@ -89,7 +89,7 @@ class detail: UIViewController {
         content = " 原始数据：\n \(data)"
         
         sorting().quicksortHoare(&data, low: 0, high: data.count - 1)
-        content = "\(content) \n\n 希尔排序: \n\n \(data) \n 平均时间复杂度O(n*logn)"
+        content = "\(content) \n\n 快速排序: \n\n \(data) \n 平均时间复杂度O(n+k) k是数据范围 稳定"
         textView.text = content
     }
     
@@ -99,7 +99,7 @@ class detail: UIViewController {
         content = " 原始数据：\n \(data)"
         
         let result = sorting().mergeSort(data)
-        content = "\(content) \n\n 希尔排序: \n\n \(result) \n 平均时间复杂度O(n*logn)"
+        content = "\(content) \n\n 归并排序: \n\n \(result) \n 平均时间复杂度O(n*logn) 稳定"
         textView.text = content
     }
     
@@ -109,7 +109,7 @@ class detail: UIViewController {
         content = " 原始数据：\n \(data)"
         
         sorting().shell(&data)
-        content = "\(content) \n\n 希尔排序: \n\n \(data) \n 平均时间复杂度O(n*logn)"
+        content = "\(content) \n\n 希尔排序: \n\n \(data) \n 平均时间复杂度O(n*logn) 稳定"
         textView.text = content
     }
     
@@ -119,7 +119,7 @@ class detail: UIViewController {
         content = " 原始数据：\n \(data)"
         
         let selectSort:[Int] = sorting().select(data: data)
-        content = "\(content) \n\n 选择排序: \n\n \(selectSort) \n 平均时间复杂度O(n^2)"
+        content = "\(content) \n\n 选择排序: \n\n \(selectSort) \n 平均时间复杂度O(n^2) 不稳定"
         textView.text = content
     }
     
@@ -129,7 +129,7 @@ class detail: UIViewController {
         content = " 原始数据：\n \(data)"
 
         let bubbling:[Int] = sorting().bubbling(data: data)
-        content = "\(content) \n\n 冒泡排序: \n\n \(bubbling) \n 平均时间复杂度O(n^2)"
+        content = "\(content) \n\n 冒泡排序: \n\n \(bubbling) \n 平均时间复杂度O(n^2) 稳定"
         textView.text = content
     }
     
@@ -139,7 +139,7 @@ class detail: UIViewController {
         content = " 原始数据：\n \(data)"
      
         let insertSort:[Int] = sorting().insert(data)
-        content = "\(content) \n\n 插入排序: \n\n \(insertSort) \n 平均时间复杂度O(n^2)"
+        content = "\(content) \n\n 插入排序: \n\n \(insertSort) \n 平均时间复杂度O(n^2) 稳定"
         textView.text = content
     }
     
