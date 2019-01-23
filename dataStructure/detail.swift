@@ -49,7 +49,27 @@ class detail: UIViewController {
             mergeSort()
         } else if self.title == "快速排序" {
             quickSort()
+        } else if self.title == "桶排序" {
+            heapSort()
         }
+    }
+    
+    func heapSort() {
+        var content: String = ""
+        let data:[Int] = [5,6,4,7,3,8,2,9,1]
+        content = " 原始数据：\n \(data)"
+        var mainHeap = Heap<Int>(sort: >, elements: data)
+//        mainHeap.insert("lad01")
+//        mainHeap.insert("lad05")
+//        mainHeap.insert("lad03")
+//        mainHeap.insert("lad04")
+//        mainHeap.insert("lad02")
+//        mainHeap.insert("lad06")
+//        mainHeap.insert("lad07")
+
+        
+        content = "\(content) \n\n 希尔排序: \n\n \(mainHeap.sorted()) \n 平均时间复杂度O(n*logn)"
+        textView.text = content
     }
     
     func quickSort() {
