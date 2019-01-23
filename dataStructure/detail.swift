@@ -79,7 +79,7 @@ class detail: UIViewController {
 //        mainHeap.insert("lad07")
 
         
-        content = "\(content) \n\n 桶排序: \n\n \(mainHeap.sorted()) \n 平均时间复杂度O(n*logn)"
+        content = "\(content) \n\n 桶排序: \n\n \(mainHeap.sorted()) \n 平均时间复杂度O(n)"
         textView.text = content
     }
     
