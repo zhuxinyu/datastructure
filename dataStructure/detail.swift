@@ -64,7 +64,7 @@ class detail: UIViewController {
         content = " 原始数据：\n \(data)"
         data.radixSort()
         
-        content = "\(content) \n\n 计数排序: \n\n \(data) \n 平均时间复杂度O(n*logn)"
+        content = "\(content) \n\n 基数排序: \n\n \(data) \n 平均时间复杂度O(dn) d是维度 稳定"
         textView.text = content
     }
     
