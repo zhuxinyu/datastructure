@@ -51,7 +51,18 @@ class detail: UIViewController {
             quickSort()
         } else if self.title == "桶排序" {
             heapSort()
+        } else if self.title == "计数排序" {
+            countingSort()
         }
+    }
+    
+    func countingSort() {
+        var content: String = ""
+        let data:[Int] = [5,6,4,4,3,5,2,0,1]
+        content = " 原始数据：\n \(data)"
+        let result = sorting().countSort(array: data)
+        content = "\(content) \n\n 希尔排序: \n\n \(result) \n 平均时间复杂度O(n*logn)"
+        textView.text = content
     }
     
     func heapSort() {

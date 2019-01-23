@@ -170,6 +170,28 @@ class sorting {
         }
         
     }
+    
+    func countSort(array: [Int]) -> [Int] {
+        let maxElement = array.max() ?? 0
+        
+        var countArray = [Int](repeating: 0, count: Int(maxElement + 1))
+        for element in array {
+            countArray[element] += 1
+        }
+        
+        // 每个位置都是前面所有节点的计数和 也就是当前节点应该存在的截止位置
+        for index in 1..<countArray.count {
+            let sum = countArray[index] + countArray[index - 1]
+            countArray[index] = sum
+        }
+        
+        var sortedArray = [Int](repeating: 0, count: array.count)
+        for element in array {
+            countArray[element] -= 1 // 每次插入一个值 就会向前移动一个位置
+            sortedArray[countArray[element]] = element
+        }
+        return sortedArray
+    }
 }
 
 struct Heap<Element: Equatable> {
@@ -223,6 +245,7 @@ struct Heap<Element: Equatable> {
         return elements.removeLast()
     }
     
+    // 将剩余节点中 最大/小的放到根节点 数组[0]位置
     mutating func siftDown(from Index:Int, upTo size:Int) {
         var parent = Index
         while true {
@@ -253,6 +276,7 @@ struct Heap<Element: Equatable> {
         var parent = parentIndex(ofChildAt: child)
         while child > 0 && sort(elements[child], elements[parent]) {
             elements.swapAt(child, parent)
+            print("inser \(elements)")
             child = parent
             parent = parentIndex(ofChildAt: child)
         }
@@ -299,7 +323,8 @@ extension Heap {
     func sorted() -> [Element] {
         var heap = Heap(sort: sort, elements: elements)
         for index in heap.elements.indices.reversed(){
-            heap.elements.swapAt(0, index)
+            heap.elements.swapAt(0, index) // 交换最大/小的值到正确排序位置
+            print("extension \(heap.elements)")
             heap.siftDown(from: 0, upTo: index)
         }
         return heap.elements
