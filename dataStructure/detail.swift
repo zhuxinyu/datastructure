@@ -53,7 +53,19 @@ class detail: UIViewController {
             heapSort()
         } else if self.title == "计数排序" {
             countingSort()
+        } else if self.title == "基数排序" {
+            radixSort()
         }
+    }
+    
+    func radixSort() {
+        var content: String = ""
+        var data:[Int] = [5555,634,422,411111,3,5,20,0,1]
+        content = " 原始数据：\n \(data)"
+        data.radixSort()
+        
+        content = "\(content) \n\n 计数排序: \n\n \(data) \n 平均时间复杂度O(n*logn)"
+        textView.text = content
     }
     
     func countingSort() {
@@ -69,7 +81,7 @@ class detail: UIViewController {
         var content: String = ""
         let data:[Int] = [5,6,4,7,3,8,2,9,1]
         content = " 原始数据：\n \(data)"
-        var mainHeap = Heap<Int>(sort: >, elements: data)
+        let mainHeap = Heap<Int>(sort: >, elements: data)
 //        mainHeap.insert("lad01")
 //        mainHeap.insert("lad05")
 //        mainHeap.insert("lad03")
