@@ -121,7 +121,7 @@ class detail: UIViewController {
         content = " 原始数据：\n \(data)"
         
         sorting().shell(&data)
-        content = "\(content) \n\n 希尔排序: \n\n \(data) \n 平均时间复杂度O(n*logn) 稳定"
+        content = "\(content) \n\n 希尔排序: \n\n \(data) \n 平均时间复杂度O(n^(0..1)) 不稳定"
         textView.text = content
     }
     
