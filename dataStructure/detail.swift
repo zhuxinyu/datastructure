@@ -55,6 +55,12 @@ class detail: UIViewController {
             countingSort()
         } else if self.title == "基数排序" {
             radixSort()
+        } else if self.title == "单例模式" {
+            singleton.shared.doSth()
+        } else if self.title == "桥接模式" {
+            let directXApi: DirectXAPI = DirectXAPI()
+            let circle: Circle = Circle(2, 2, 2, directXApi)
+            circle.draw()
         }
     }
     

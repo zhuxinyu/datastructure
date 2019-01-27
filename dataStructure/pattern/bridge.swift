@@ -21,7 +21,7 @@ public class Shape {
     }
     
     func draw() {
-        
+        print("bridge pattern: shape draw")
     }
 }
 

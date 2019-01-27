@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1E014AAA21F027DE002731A0 /* hashList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E014AA921F027DE002731A0 /* hashList.swift */; };
 		1E02813E21FD51CF00432030 /* bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E02813D21FD51CF00432030 /* bridge.swift */; };
+		1E02814021FD94CE00432030 /* singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E02813F21FD94CE00432030 /* singleton.swift */; };
 		1E65B94F21EAE5680069E47D /* bothwayLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E65B94E21EAE5680069E47D /* bothwayLinkedList.swift */; };
 		1E6CA22E21F1A00300679460 /* stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6CA22D21F1A00300679460 /* stack.swift */; };
 		1E6CA23021F1C7CA00679460 /* queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6CA22F21F1C7CA00679460 /* queue.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		1E014AA921F027DE002731A0 /* hashList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hashList.swift; sourceTree = "<group>"; };
 		1E02813D21FD51CF00432030 /* bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bridge.swift; sourceTree = "<group>"; };
+		1E02813F21FD94CE00432030 /* singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = singleton.swift; sourceTree = "<group>"; };
 		1E65B94E21EAE5680069E47D /* bothwayLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bothwayLinkedList.swift; sourceTree = "<group>"; };
 		1E6CA22D21F1A00300679460 /* stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stack.swift; sourceTree = "<group>"; };
 		1E6CA22F21F1C7CA00679460 /* queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = queue.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				1E02813D21FD51CF00432030 /* bridge.swift */,
+				1E02813F21FD94CE00432030 /* singleton.swift */,
 			);
 			path = pattern;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 			files = (
 				1E6CA22E21F1A00300679460 /* stack.swift in Sources */,
 				1EA095F821D7BEE30011D544 /* chain.swift in Sources */,
+				1E02814021FD94CE00432030 /* singleton.swift in Sources */,
 				1EA095F621D761E30011D544 /* detail.swift in Sources */,
 				1E6CA23221F3570400679460 /* circulationQueue.swift in Sources */,
 				1EA095F421D714810011D544 /* extensions.swift in Sources */,
