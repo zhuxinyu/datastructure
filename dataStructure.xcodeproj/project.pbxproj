@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E014AAA21F027DE002731A0 /* hashList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E014AA921F027DE002731A0 /* hashList.swift */; };
+		1E02813E21FD51CF00432030 /* bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E02813D21FD51CF00432030 /* bridge.swift */; };
 		1E65B94F21EAE5680069E47D /* bothwayLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E65B94E21EAE5680069E47D /* bothwayLinkedList.swift */; };
 		1E6CA22E21F1A00300679460 /* stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6CA22D21F1A00300679460 /* stack.swift */; };
 		1E6CA23021F1C7CA00679460 /* queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6CA22F21F1C7CA00679460 /* queue.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		1E014AA921F027DE002731A0 /* hashList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hashList.swift; sourceTree = "<group>"; };
+		1E02813D21FD51CF00432030 /* bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bridge.swift; sourceTree = "<group>"; };
 		1E65B94E21EAE5680069E47D /* bothwayLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bothwayLinkedList.swift; sourceTree = "<group>"; };
 		1E6CA22D21F1A00300679460 /* stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stack.swift; sourceTree = "<group>"; };
 		1E6CA22F21F1C7CA00679460 /* queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = queue.swift; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E02813C21FD51C100432030 /* pattern */ = {
+			isa = PBXGroup;
+			children = (
+				1E02813D21FD51CF00432030 /* bridge.swift */,
+			);
+			path = pattern;
+			sourceTree = "<group>";
+		};
 		1EA095AD21D70E5C0011D544 = {
 			isa = PBXGroup;
 			children = (
@@ -119,9 +129,9 @@
 		1EA095B821D70E5C0011D544 /* dataStructure */ = {
 			isa = PBXGroup;
 			children = (
+				1E02813C21FD51C100432030 /* pattern */,
 				1EA095F021D7141B0011D544 /* extension */,
 				1EA095ED21D711110011D544 /* sort */,
-				1EA095EC21D710F20011D544 /* recursion */,
 				1EA095EB21D710EB0011D544 /* stack */,
 				1EA095EA21D710E00011D544 /* chain */,
 				1EA095B921D70E5C0011D544 /* AppDelegate.swift */,
@@ -173,13 +183,6 @@
 				1E6CA23121F3570400679460 /* circulationQueue.swift */,
 			);
 			path = stack;
-			sourceTree = "<group>";
-		};
-		1EA095EC21D710F20011D544 /* recursion */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = recursion;
 			sourceTree = "<group>";
 		};
 		1EA095ED21D711110011D544 /* sort */ = {
@@ -339,6 +342,7 @@
 				1EA095BC21D70E5C0011D544 /* ViewController.swift in Sources */,
 				1EA095EF21D7113A0011D544 /* list.swift in Sources */,
 				1E6CA23021F1C7CA00679460 /* queue.swift in Sources */,
+				1E02813E21FD51CF00432030 /* bridge.swift in Sources */,
 				1E6CA23621F44C1A00679460 /* sorting.swift in Sources */,
 				1EA095C221D70E5C0011D544 /* dataStructure.xcdatamodeld in Sources */,
 				1EA095BA21D70E5C0011D544 /* AppDelegate.swift in Sources */,

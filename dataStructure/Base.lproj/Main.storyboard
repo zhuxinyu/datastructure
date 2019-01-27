@@ -58,11 +58,11 @@
                                 <rect key="frame" x="32" y="329" width="78" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="recursion">
+                                <state key="normal" title="pattern">
                                     <color key="titleColor" red="0.70980392160000005" green="0.8980392157" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yks-PI-qfg" kind="show" identifier="recursion" id="AgE-JL-Ofq"/>
+                                    <segue destination="yks-PI-qfg" kind="show" identifier="pattern" id="AgE-JL-Ofq"/>
                                 </connections>
                             </button>
                         </subviews>

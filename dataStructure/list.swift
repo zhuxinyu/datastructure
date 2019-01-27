@@ -10,21 +10,21 @@ import Foundation
 import UIKit
 
 enum type: String {
-    case chain, stack, recursion, sort
+    case chain, stack, pattern, sort
 }
 
 class list: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     lazy var chain:[String] = ["单链表", "双向链表", "散列表", "约瑟夫环", "回文字符串"]
     lazy var stack:[String] = ["顺序栈", "链式栈","顺序队列", "链式队列", "循环队列", "用栈实现队列", "表达式求值"]
-    lazy var recursion:[String] = ["递归和循环实现相同的功能", "内存检测", "环监测"]
+    lazy var pattern:[String] = ["桥接模式"]
     lazy var sort:[String] = ["冒泡排序", "插入排序", "选择排序", "希尔排序", "归并排序", "快速排序", "桶排序", "计数排序", "基数排序"]
     
     lazy var dataSource:[String] = { [unowned self] in
         switch type(rawValue:typeStr)! {
         case .chain: return chain
         case .stack: return stack
-        case .recursion: return recursion
+        case .pattern: return pattern
         case .sort: return sort
         }
     }()
